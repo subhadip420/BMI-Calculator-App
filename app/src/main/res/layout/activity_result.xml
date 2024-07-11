@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    <!-- Header text indicating Body Mass Index -->
+    <TextView
+        android:id="@+id/textView_BmiResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Body Mass Index"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- ImageView to display an emoji based on the BMI result -->
+    <ImageView
+        android:id="@+id/emojiIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/textView_BmiResult"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="00dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/emoji_normal" />
+
+    <!-- Pretext that appears above the BMI category -->
+    <TextView
+        android:id="@+id/preText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emojiIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="pretext"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- Text indicating the BMI category label -->
+    <TextView
+        android:id="@+id/textViewCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/preText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="Your BMI Category is:"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <!-- Text displaying the BMI category -->
+    <TextView
+        android:id="@+id/bmiCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCategory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="BMI Category"
+        android:textColor="#F42525"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- CardView to display detailed BMI result -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resultCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmiCategory"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <!-- Inner RelativeLayout for the result card -->
+        <RelativeLayout
+            android:id="@+id/resultBG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="#FFFFFF">
+
+            <!-- Text displaying the user's gender -->
+            <TextView
+                android:id="@+id/viewGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="Gender"
+                android:textColor="#434343"
+                android:textSize="20sp" />
+
+            <!-- Text indicating the BMI result label -->
+            <TextView
+                android:id="@+id/bmiResultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewGender"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:text="Your Body Mass Index (BMI) is:"
+                android:textColor="#040404"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Text displaying the actual BMI result -->
+            <TextView
+                android:id="@+id/bmiResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bmiResultText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="BMI Result"
+                android:textColor="#040404"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView to display a graph of weight history -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/graphCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <!-- Inner RelativeLayout for the graph card -->
+        <RelativeLayout
+            android:id="@+id/graphBG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="#FFFFFF">
+
+            <!-- Text indicating the graph heading -->
+            <TextView
+                android:id="@+id/graphHeadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:text="Weight History Over the Past Week"
+                android:textColor="#040404"
+                android:textSize="15sp" />
+
+            <!-- Line chart to display weight history -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

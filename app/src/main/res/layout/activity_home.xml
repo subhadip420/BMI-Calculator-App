@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F1F1"
+    tools:context=".HomeActivity">
+
+    <!-- User Profile Section -->
+    <RelativeLayout
+        android:id="@+id/userProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:background="#E7CDED">
+
+        <!-- CircleImageView for user profile image -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/emoji_normal"
+            app:civ_border_color="@android:color/black"
+            app:civ_border_width="1dp" />
+
+        <!-- User name TextView -->
+        <TextView
+            android:id="@+id/textView_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="#303F9F"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!-- User email TextView -->
+        <TextView
+            android:id="@+id/textView_userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_userName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Email"
+            android:textColor="#303F9F"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Logout ImageView -->
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_baseline_logout_24" />
+
+    </RelativeLayout>
+
+    <!-- Gender Selection Section -->
+    <LinearLayout
+        android:id="@+id/userGenderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userProfile"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <!-- Male CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/maleCard"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/maleBG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userProfile"
+                android:layout_marginTop="0dp"
+                android:background="#FFFFFF">
+
+                <!-- Male TextView -->
+                <TextView
+                    android:id="@+id/maleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Male"
+                    android:textColor="#303F9F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Male Icon ImageView -->
+                <ImageView
+                    android:id="@+id/maleIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/male" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Female CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/femaleCard"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/femaleBG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userProfile"
+                android:layout_marginTop="0dp"
+                android:background="#FFFFFF">
+
+                <!-- Female TextView -->
+                <TextView
+                    android:id="@+id/femaleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Female"
+                    android:textColor="#303F9F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Female Icon ImageView -->
+                <ImageView
+                    android:id="@+id/femaleIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/female" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--    </RelativeLayout>-->
+    </LinearLayout>
+
+    <!-- Height Selection Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/heightCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userGenderLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:id="@+id/userHeightLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="#FFFFFF">
+
+            <!-- Height Text TextView -->
+            <TextView
+                android:id="@+id/heightText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Select Height (Cm)"
+                android:textColor="#303F9F"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- User Selected Height TextView -->
+            <TextView
+                android:id="@+id/userHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heightText"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="177"
+                android:textColor="#303F9F"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!-- SeekBar for Height Selection -->
+            <SeekBar
+                android:id="@+id/seekbarForHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userHeight"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:thumbTint="#DAD8D8">
+
+            </SeekBar>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Weight and Age Selection Section -->
+    <LinearLayout
+        android:id="@+id/userWeightAndAgeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heightCard"
+        android:layout_marginTop="0dp">
+
+        <!-- Weight CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/weightCard"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="25dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/weightBG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userProfile"
+                android:layout_marginTop="0dp"
+                android:background="#FFFFFF">
+
+                <!-- Weight label TextView -->
+                <TextView
+                    android:id="@+id/userWeightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Weight (Kg)"
+                    android:textColor="#303F9F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Weight value TextView -->
+                <TextView
+                    android:id="@+id/userWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userWeightText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="60"
+                    android:textColor="#303F9F"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <!-- Layout for weight increment and decrement buttons -->
+                <LinearLayout
+                    android:id="@+id/weightIncDecLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userWeight"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Decrement button CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/decrementCard"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/decrementLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="#F36363">
+
+
+                            <ImageView
+                                android:id="@+id/weightDecrement"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/img_3" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Increment button CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/incrementCard"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/incrementLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="#ADDC85">
+
+
+                            <ImageView
+                                android:id="@+id/weightIncrement"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/img_5" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Age CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ageCard"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="25dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/ageBG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userProfile"
+                android:layout_marginTop="0dp"
+                android:background="#FFFFFF">
+
+                <!-- Age label TextView -->
+                <TextView
+                    android:id="@+id/userAgeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Age (Year)"
+                    android:textColor="#303F9F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Age value TextView -->
+                <TextView
+                    android:id="@+id/userAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userAgeText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="50"
+                    android:textColor="#303F9F"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <!-- Layout for age increment and decrement buttons -->
+                <LinearLayout
+                    android:id="@+id/ageIncDecLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userAge"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Decrement button CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ageDecrementCard"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/ageDecrementLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="#F36363">
+
+
+                            <ImageView
+                                android:id="@+id/ageDecrement"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/img_3" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Increment button CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ageIncrementCard"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/ageIncrementLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="#ADDC85">
+
+
+                            <ImageView
+                                android:id="@+id/ageIncrement"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/img_5" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- Calculate BMI Button -->
+    <Button
+        android:id="@+id/calculateBMI"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userWeightAndAgeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:insetLeft="12dp"
+        android:insetRight="12dp"
+        android:text="Calculate BMI"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#1E3AF1"
+        app:iconPadding="8dp"
+        app:textAllCaps="false"
+        tools:ignore="TextContrastCheck" />
+
+</RelativeLayout>
