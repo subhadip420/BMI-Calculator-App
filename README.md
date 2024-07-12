@@ -27,7 +27,7 @@ The primary goal of the BMI Calculator app is to promote health awareness by ena
 
 - **History and Tracking:** Users can save their BMI calculations and track their progress over time.
 
-- ## Screenshots
+ ## Screenshots
 
 ![App Screenshot]()
 
